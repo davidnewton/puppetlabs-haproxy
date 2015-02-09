@@ -83,12 +83,12 @@
 #  (this resource can be declared anywhere)
 #
 define haproxy::backend (
+  $blockoptions = { ' '  => ' '  },
   $listening_service,
   $ports,
   $server_names = $::hostname,
   $ipaddresses  = $::ipaddress,
   $options      = '',
-  $blockoptions = '',
   $mode         = 'tcp'
 ) {
   # Template uses $ipaddresses, $server_name, $ports, $option, $mode
