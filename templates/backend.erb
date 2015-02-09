@@ -1,5 +1,10 @@
 backend <%= name %>
   mode <%= mode %>
+  <% blockoptions.sort.each do |key, val| -%>
+  <% Array(val).each do |item| -%>
+  <%= key %>  <%= item %>
+  <% end -%>
+  <% end -%>
 <% Array(ipaddresses).zip(Array(server_names)).each do |ipaddress,host| -%>
   server <%= host %> <%= ipaddress %>:<%= Array(ports).collect {|x|x.split(',')}.flatten.join(",#{ipaddress}:") %> <%= Array(options).join(" ") %>
 <% end %>
