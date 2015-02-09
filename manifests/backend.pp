@@ -47,6 +47,8 @@
 #      An array of options to be specified after the server declaration
 #       in the listening service's configuration block.
 #
+# [*blockoptions*]
+#     A hash array of options to be specified before the server declaration, eg: srvtcpka.
 #
 # === Examples
 #
@@ -75,7 +77,7 @@
 #    server_names      => ['server01', 'server02'],
 #    ipaddresses       => ['192.168.56.200', '192.168.56.201'],
 #    options           => 'check',
-#    blockoptions      => {'option' => [ 'srvtcpka' ], },
+#    blockoptions      => {'option' => [ 'srvtcpka' ],  'balance' => [ 'roundrobin' ], },
 #  }
 #
 #  (this resource can be declared anywhere)
